@@ -1,0 +1,61 @@
+### Note: Install REST Client extension for VSCode
+
+### Create new profile
+
+POST http://localhost:3000/profile/add
+content-type: application/json
+
+{
+    "name": "Barkah",
+    "description": "Adolph Larrue Martinez III.",
+    "mbti": "INTP",
+    "enneagram": "9w8",
+    "variant": "sp/so",
+    "tritype": 725,
+    "socionics": "SEE",
+    "sloan": "RCOEN",
+    "psyche": "FEVL",
+    "temperaments": "Phlegmatic",
+    "image": "https://barkah.dev/images/avatars.svg"
+}
+
+### Get profile by id
+
+GET http://localhost:3000/6597593014293fe5600c4802
+
+### Create user account
+
+POST http://localhost:3000/user/add
+content-type: application/json
+
+{
+    "name": "Hadi"
+}
+
+### Create new comment
+
+POST http://localhost:3000/comment/add
+content-type: application/json
+
+{
+    "profileId": "6597593014293fe5600c4802",
+    "userId": "6597594314293fe5600c4806",
+    "comment": "This is a comment.",
+    "mbti": "INTP",
+    "enneagram": "9w8",
+    "zodiac": null
+}
+
+### Get comments by profile id
+
+GET http://localhost:3000/comment/6597593014293fe5600c4802?sortBy=recent&filterBy=all
+
+### Toggle like
+
+POST http://localhost:3000/comment/toggle-like
+content-type: application/json
+
+{
+    "commentId": "6597594e14293fe5600c480a",
+    "userId": "6597594314293fe5600c4806"
+}
